@@ -11,5 +11,26 @@ const env = "DEV"; // Toggle between these possible values "DEV" | "STAGE" | "PR
 const databaseCredential = "devuser:password";
 
 // Task: Add code here
-
-console.log(`Database credential for environment ${env} is ${databaseCredential}`);
+switch (env) {
+    case "DEV": {
+      break;
+    }
+    case "STAGE": {
+      const databaseCredential = "stageuser:password";
+      console.log(
+        `Database credential for environment ${env} is ${databaseCredential}`
+      );
+      break;
+    }
+  
+    case "PROD": {
+      const databaseCredential = "produser:password";
+      console.log(
+        `Database credential for environment ${env} is ${databaseCredential}`
+      );
+      break;
+    }
+  
+    default:
+      console.log("Invalid");
+  }
